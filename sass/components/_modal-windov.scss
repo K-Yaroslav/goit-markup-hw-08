@@ -1,0 +1,66 @@
+.modal {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px;
+  background-color: var(--primary-bg-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transition: transform var(--transition);
+  z-index: 10;
+
+  @include mq(mob-only) {
+    width: 450px;
+  }
+
+
+  @include mq(mob-min) {
+    margin: 0 15px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+
+  @include mq(tab-only) {
+    width: 450px;
+  }
+
+  @include mq(desc) {
+    width: 528px;
+  }
+
+  & .is-hidden {
+    transform: scale(0);
+  }
+
+  &__close {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    padding: 6px;
+    right: 8px;
+    top: 8px;
+    width: 30px;
+    height: 30px;
+    fill: #000;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: fill var(--transition);
+
+    &:hover {
+      fill: var(--hover-color);
+    }
+  }
+}
+
+
+@media screen and (max-height: 767px) {
+  .modal {
+    top: 0%;
+    transform: translate(0, 20%);
+  }
+}

@@ -1,0 +1,59 @@
+.clients {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  gap: 30px;
+  flex-wrap: wrap;
+
+  @include mq(desc) {
+
+    flex-wrap: nowrap;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    max-width: 210px;
+    max-height: 92px;
+    fill: var(--social-button-fill-color);
+    border: 1px solid var(--social-button-fill-color);
+    transition: border var(--transition), fill var(--transition);
+
+    @include mq(tab) {
+      width: 226px;
+      padding: 16px 60px;
+    }
+
+    @include mq(desc) {
+      width: 170px;
+      padding: 16px 32px;
+    }
+
+    &:hover,
+    &:focus {
+      fill: var(--hover-color);
+      border: 1px solid var(--hover-color);
+    }
+  }
+
+  &__link {
+    margin-right: 0px;
+
+    @include mq(mob-only) {
+      width: calc((100% - 30px) / 2);
+    }
+
+
+    @include mq(tab) {
+      width: calc((100% - 60px) / 3);
+    }
+
+    &--indent {
+      margin-right: 0px;
+    }
+  }
+}

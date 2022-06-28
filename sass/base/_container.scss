@@ -1,0 +1,36 @@
+.container {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+
+
+  @include mq(mob) {
+    width: 480px;
+  }
+
+
+  @include mq(tab) {
+    width: 768px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  @include mq(desc) {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.container--footer {
+  @include mq(tab) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @include mq(desc) {
+    display: flex;
+    align-items: baseline;
+  }
+}

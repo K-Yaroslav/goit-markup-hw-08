@@ -1,0 +1,9 @@
+.header {
+  border-bottom: 1px solid var(--header-color);
+
+  @include mq(mob-only) {
+    height: 60px;
+    align-items: center;
+
+  }
+}

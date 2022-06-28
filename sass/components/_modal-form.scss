@@ -1,0 +1,235 @@
+.modal-form__title {
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--title-text-color);
+}
+
+.form-field {
+  display: block;
+  position: relative;
+  flex-direction: column;
+  margin-bottom: 28px;
+
+  &__input {
+    width: 100%;
+    height: 40px;
+    padding: 4px 10px 4px 42px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    outline: none;
+    transition: color var(--transition), fill var(--transition), border var(--transition);
+
+    &:focus,
+    ~svg {
+      fill: var(--hover-color);
+      border-color: var(--hover-color);
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: -17px;
+    left: 0;
+    margin-bottom: 4px;
+    display: inline-block;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.15;
+    letter-spacing: 0.01em;
+    color: var(--primary-text-color);
+  }
+
+  svg {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 12px;
+    fill: var(--title-text-color);
+    transition: fill var(--transition);
+  }
+
+  &:hover {
+
+    svg,
+    .form-field-input {
+      border-color: var(--hover-color);
+      fill: var(--hover-color);
+    }
+  }
+}
+
+
+.form-textarea {
+  position: relative;
+  height: 120px;
+
+  &__comment {
+    width: 100%;
+    height: 100%;
+    padding: 12px 16px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.01em;
+    color: var(--title-text-color);
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    outline: none;
+    resize: none;
+
+    &:focus {
+      cursor: auto;
+      border-color: var(--hover-color);
+    }
+
+    &:hover {
+      border-color: var(--hover-color);
+    }
+
+    &::placeholder {
+      color: var(--form-text-color);
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: -17px;
+    left: 0;
+    margin-bottom: 4px;
+    display: inline-block;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.15;
+    letter-spacing: 0.01em;
+    color: var(--primary-text-color);
+  }
+}
+
+.form-submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: var(--primary-text-color);
+
+  @include mq(desc) {
+    font-size: 14px;
+    line-height: 1.71;
+
+  }
+
+  @include mq(noDesc) {
+    font-size: 12px;
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 55px;
+    width: 200px;
+    height: 50px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    background-color: var(--button-background-color);
+    color: var(--white-color);
+    border: none;
+    cursor: pointer;
+    transition: background-color var(--transition);
+
+    &:hover,
+    &:focus {
+      background-color: var(--button-hover-color);
+    }
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+  }
+
+  &__label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    height: 21px;
+
+  }
+
+  &__checkbox {
+    position: relative;
+    display: inline-block;
+    appearance: none;
+    top: 0;
+    left: 0;
+    margin-right: 26px;
+  }
+
+  &__check {
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
+    transform: scale(2);
+    transition: opacity var(--transition), transform var(--transition);
+
+    .form-submit__checkbox:checked+& {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  &__box {
+    position: absolute;
+    z-index: 0;
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity var(--transition), transform var(--transition);
+
+    .form-submit__checkbox:checked~& {
+      opacity: 0;
+    }
+
+    .form-submit__checkbox:focus~& {
+      fill: var(--hover-color);
+    }
+  }
+
+  &__policy {
+    margin-left: 5px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.67px;
+    letter-spacing: 0.03em;
+    text-decoration-line: underline;
+    color: var(--accent-color);
+
+    @include mq(desc) {
+      font-size: 14px;
+      line-height: 1.71;
+
+    }
+  }
+}

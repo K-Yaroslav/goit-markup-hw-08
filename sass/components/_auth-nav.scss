@@ -1,0 +1,70 @@
+.auth-nav {
+  padding: 0;
+  margin: 0 0 0 auto;
+  display: flex;
+  list-style: none;
+
+  @include mq(mob-only) {
+    display: none;
+  }
+
+  @include mq(tab) {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  @include mq(desc) {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  &__item {
+
+
+    @include mq(tab) {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: var(--primary-text-color);
+    font-weight: 500;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    font-style: normal;
+    transition: color var(--transition);
+
+    @include mq(tab) {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+    }
+
+    @include mq(desc) {
+      font-size: 14px;
+    }
+
+    &:hover,
+    &:focus {
+      color: var(--hover-color);
+    }
+  }
+
+  &__mail {
+    fill: currentColor;
+    margin: 0 10px 0 0;
+    vertical-align: middle;
+  }
+
+  &__phone {
+    fill: currentColor;
+    margin: 0 10px 0 0;
+    vertical-align: middle;
+  }
+}
