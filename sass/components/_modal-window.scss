@@ -9,7 +9,6 @@
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   transition: transform var(--transition);
-  z-index: 10;
 
   @include mq(mob-only) {
     width: 450px;
@@ -17,8 +16,7 @@
 
 
   @include mq(mob-min) {
-    margin: 0 15px;
-    width: 100%;
+    width: calc(100% - 30px);
     box-sizing: border-box;
   }
 
@@ -54,13 +52,5 @@
     &:hover {
       fill: var(--hover-color);
     }
-  }
-}
-
-
-@media screen and (max-height: 767px) {
-  .modal {
-    top: 0%;
-    transform: translate(0, 20%);
   }
 }

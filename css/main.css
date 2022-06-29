@@ -985,7 +985,6 @@ address {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   transition: transform var(--transition);
-  z-index: 10;
 }
 @media (max-width: 767.98px) {
   .modal {
@@ -994,8 +993,7 @@ address {
 }
 @media (max-width: 479.98px) {
   .modal {
-    margin: 0 15px;
-    width: 100%;
+    width: calc(100% - 30px);
     box-sizing: border-box;
   }
 }
@@ -1032,12 +1030,6 @@ address {
   fill: var(--hover-color);
 }
 
-@media screen and (max-height: 767px) {
-  .modal {
-    top: 0%;
-    transform: translate(0, 20%);
-  }
-}
 .modal-form__title {
   margin-top: 0;
   margin-bottom: 30px;
@@ -1231,7 +1223,7 @@ address {
   fill: var(--hover-color);
 }
 .form-submit__policy {
-  margin-left: 5px;
+  margin-left: 2px;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.67px;
