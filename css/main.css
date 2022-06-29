@@ -410,7 +410,6 @@ body {
   padding-top: 118px;
   padding-bottom: 118px;
   width: 100%;
-  max-width: 480px;
   height: 400px;
   margin-left: auto;
   margin-right: auto;
@@ -427,7 +426,6 @@ body {
 }
 @media (min-width: 768px) {
   .hero--overlay {
-    max-width: 768px;
     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/hero/m/hero1xm.jpg");
   }
 }
@@ -995,6 +993,8 @@ address {
   .modal {
     width: calc(100% - 30px);
     box-sizing: border-box;
+    overflow-y: scroll;
+    max-height: 500px;
   }
 }
 @media (min-width: 768px) and (max-width: 1199.98px) {
@@ -1300,12 +1300,6 @@ address {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1199.98px) {
-  .height {
-    min-height: 147px;
-  }
-}
-
 .project {
   display: flex;
 }
@@ -1348,11 +1342,22 @@ address {
   cursor: pointer;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .project__link {
+    display: flex;
+    flex-direction: column;
+  }
+}
 .project__box {
   padding: 20px 24px;
   border-right: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
   border-left: 1px solid var(--border-color);
+}
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .project__box {
+    flex-grow: 1;
+  }
 }
 .project__card {
   position: relative;
@@ -1378,6 +1383,13 @@ address {
 .project__link:hover .project__overlay, .project__link:focus .project__overlay {
   transform: translateY(0);
   opacity: 1;
+}
+@media (max-width: 479.98px) {
+  .project__overlay {
+    font-size: 14px;
+    align-items: center;
+    padding: 10% 24px;
+  }
 }
 
 .project__img {
@@ -1480,6 +1492,9 @@ address {
 .menu__nav-link:hover, .menu__nav-link:focus {
   color: var(--hover-color);
 }
+.menu__nav-link--current {
+  color: var(--hover-color);
+}
 
 .menu_secon-container {
   display: flex;
@@ -1527,6 +1542,11 @@ address {
   letter-spacing: 0.02em;
   color: var(--hover-color);
   margin-left: -10px;
+}
+@media (max-width: 479.98px) {
+  .menu__social-list {
+    font-size: 10px;
+  }
 }
 
 .menu__social-item {

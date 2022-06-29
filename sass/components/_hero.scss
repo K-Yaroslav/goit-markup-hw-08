@@ -64,7 +64,7 @@
     padding-top: 118px;
     padding-bottom: 118px;
     width: 100%;
-    max-width: 480px;
+    // max-width: 480px;
     height: 400px;
     margin-left: auto;
     margin-right: auto;
@@ -83,7 +83,7 @@
     }
 
     @include mq(tab) {
-      max-width: 768px;
+      // max-width: 768px;
       background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
         url('../images/hero/m/hero1xm.jpg');
 

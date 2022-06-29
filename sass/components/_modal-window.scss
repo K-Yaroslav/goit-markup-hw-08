@@ -18,6 +18,8 @@
   @include mq(mob-min) {
     width: calc(100% - 30px);
     box-sizing: border-box;
+    overflow-y: scroll;
+    max-height: 500px;
   }
 
 

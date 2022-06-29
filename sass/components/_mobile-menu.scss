@@ -97,6 +97,10 @@
     &:focus {
         color: var(--hover-color);
     }
+
+    &--current {
+        color: var(--hover-color);
+    }
 }
 
 .menu_secon-container {
@@ -145,6 +149,10 @@
     letter-spacing: 0.02em;
     color: var(--hover-color);
     margin-left: -10px;
+
+    @include mq(mob-min) {
+        font-size: 10px;
+    }
 }
 
 .menu__social-item {
